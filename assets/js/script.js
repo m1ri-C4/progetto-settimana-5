@@ -62,3 +62,11 @@ form.addEventListener('submit', (e) => {
 
     }, 2000);
 });
+
+
+//scroll cambio colore
+const header = document.querySelector("#site-header");
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 0);
+});

@@ -1,12 +1,12 @@
 @media(prefers-reduced-motion: reduce) {
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 *,
@@ -80,6 +80,22 @@ body.darkTheme {
     }
 }
 
+#site-header.scrolled,
+body.darkTheme #site-header.scrolled {
+    background-color: hsl(150, 60%, 30%);
+
+    p:first-child,
+    nav a {
+        color: white;
+    }
+
+    button {
+        background-color: hsl(150, 60%, 30%);
+        color: white;
+        border-color: white;
+    }
+}
+
 /*HEADER NAV*/
 
 #site-header {
@@ -122,6 +138,17 @@ body.darkTheme {
         }
 
     }
+
+    #site-header.scrolled {
+        background-color: hsl(150, 60%, 30%);
+        transition: background-color 300ms ease;
+
+        p:first-child {
+            color: white;
+        }
+
+    }
+
 
     button {
         border: 1px solid #e0e0e0;
@@ -579,6 +606,8 @@ main section:nth-of-type(4) {
     }
 
 }
+
+
 
 @media (min-width:998px) {
     main section:not(#hero) {
