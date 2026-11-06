@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     color: #1a1a1a;
     background-color: #fafafa;
+    overflow-anchor: none;
 }
 
 html {
@@ -34,6 +35,11 @@ body.darkTheme {
         button {
             background-color: #1f1f1f;
             color: #fafafa;
+
+            &:hover {
+                background-color: hsl(153, 27%, 94%);
+                color: hsl(150, 60%, 30%);
+            }
         }
     }
 
@@ -41,6 +47,16 @@ body.darkTheme {
     #works .card,
     #teams .card {
         background-color: #1f1f1f;
+        border-color: #292929;
+    }
+
+    #teams {
+        background-color: #181818;
+
+        h5,
+        p {
+            color: #B3B3B3;
+        }
     }
 
     #site-footer {
@@ -146,7 +162,8 @@ body.darkTheme {
         border-radius: 20px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         font-weight: bold;
-        color: hsl(150, 60%, 30%)
+        color: hsl(150, 60%, 30%);
+        cursor: pointer;
     }
 
     h1,
@@ -168,7 +185,7 @@ body.darkTheme {
     }
 }
 
-/* MAIN SECTION*/
+/* MAIN */
 
 @keyframes section-in {
     from {
@@ -227,7 +244,7 @@ main section:nth-of-type(4) {
     animation-delay: 240ms;
 }
 
-
+/*SECTION*/
 
 #works img {
     max-width: 100%;
@@ -248,8 +265,6 @@ main section:nth-of-type(4) {
         color: hsl(150, 60%, 30%);
     }
 }
-
-
 
 
 #teams {
@@ -287,6 +302,172 @@ main section:nth-of-type(4) {
     }
 }
 
+#teams p,
+#services p {
+    color: #666;
+}
+
+/* OVERLAY e MODAL */
+
+@keyframes overlay-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 480px;
+    max-height: 90vh;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 10px;
+
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.closing {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+    }
+
+
+    h2 {
+        color: hsl(150, 60%, 30%);
+    }
+
+    P {
+        color: #666;
+    }
+
+    .thanks {
+        color: hsl(150, 60%, 30%);
+        background-color: hsl(153, 27%, 94%);
+        width: 430px;
+        height: 40px;
+        align-content: center;
+        padding-left: 10px;
+        font-weight: bold;
+        display: none;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 18px;
+        color: #666;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+.overlay:not([hidden]) {
+    animation: overlay-in 0.3s ease-out;
+}
+
+.overlay:not([hidden]) .modal {
+    animation: modal-in 0.3s ease-out;
+}
+
+.overlay[hidden] {
+    display: none;
+}
+
+/*FORM*/
+
+#form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        height: 35px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 5px 10px;
+
+        &:hover {
+            border: 2px solid hsl(150, 60%, 30%);
+        }
+    }
+
+    textarea {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+
+        &:hover {
+            border: 2px solid hsl(150, 60%, 30%);
+        }
+    }
+
+    button {
+        margin: 5px;
+        width: 150px;
+        height: 40px;
+        font-weight: bold;
+        color: #fff;
+        background-color: hsl(150, 60%, 30%);
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: hsl(150, 60%, 25%);
+        }
+    }
+}
+
 /*FOOTER*/
 
 #site-footer {
@@ -294,7 +475,7 @@ main section:nth-of-type(4) {
     flex-direction: column;
     align-items: center;
     background-color: #1a1a1a;
-    color: rgb(150, 146, 146);
+    color: #666;
 
     p:first-child {
         text-align: center;
@@ -306,7 +487,6 @@ main section:nth-of-type(4) {
 
     p:last-child {
         font-size: 15px;
-        color: rgb(150, 146, 146);
     }
 
     .social-icons {
