@@ -76,11 +76,10 @@ body.darkTheme {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    gap: 10px;
+    padding: 10px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: #fafafa;
 
     p:first-child {
@@ -94,7 +93,6 @@ body.darkTheme {
 
     nav ul {
         display: flex;
-        gap: 20px;
         list-style: none;
         padding: 0;
 
@@ -118,7 +116,6 @@ body.darkTheme {
         border: 1px solid #e0e0e0;
         background-color: #fafafa;
         border-radius: 50%;
-        margin-left: 10px;
         width: 40px;
         height: 40px;
         color: rgb(85, 83, 83);
@@ -512,4 +509,42 @@ main section:nth-of-type(4) {
         }
     }
 
+}
+
+@media (min-width: 768px) {
+    #site-header {
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0 10px;
+
+        p:first-child {
+            flex-basis: auto;
+            margin-right: auto;
+        }
+    }
+
+    #works {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            width: 44%;
+        }
+    }
+
+    h2 {
+        flex-basis: 100%;
+    }
+
+    #services,
+    #teams {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            width: 44%;
+        }
+    }
 }
