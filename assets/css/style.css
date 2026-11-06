@@ -13,24 +13,148 @@ body {
     background-color: #fafafa;
 }
 
+/*HEADER NAV*/
+
+#site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fafafa;
+
+    p:first-child {
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: hsl(150, 60%, 30%);
+        margin: 0;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+
+
+        a {
+            color: rgb(85, 83, 83);
+            text-decoration: none;
+        }
+
+
+    }
+
+    button {
+        border: 1px solid #e0e0e0;
+        background-color: #fafafa;
+        border-radius: 50%;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        color: rgb(85, 83, 83);
+    }
+}
+
+#light-mode {
+    display: none;
+}
+
+
+
+/*HERO SECTION*/
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: hsl(150, 60%, 30%);
+    color: white;
+    height: 600px;
+    width: 100%;
+
+    h1 {
+        margin-bottom: -10px;
+    }
+
+    button {
+        border: none;
+        width: 170px;
+        height: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        font-weight: bold;
+        color: hsl(150, 60%, 30%)
+    }
+}
+
 main {
     display: flex;
     flex-direction: column;
-    padding: 10px;
 }
 
 .card {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-img {
+#works img {
     max-width: 100%;
     height: auto;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+/*FOOTER*/
+
+#site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: rgb(150, 146, 146);
+
+    p:first-child {
+        text-align: center;
+        font-weight: bold;
+        color: hsl(150, 60%, 30%);
+        font-size: 20px;
+        margin-bottom: -10px;
+    }
+
+    p:last-child {
+        font-size: 15px;
+        color: rgb(150, 146, 146);
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+
+        .icons {
+            border: 1px solid rgb(54, 53, 53);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            align-content: center;
+            color: white;
+            background-color: rgb(54, 53, 53);
+        }
+    }
+
 }
