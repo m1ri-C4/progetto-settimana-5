@@ -44,10 +44,17 @@ body {
 
 
         a {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 5px;
             color: rgb(85, 83, 83);
             text-decoration: none;
-        }
 
+            &:hover {
+                background-color: hsl(151, 47%, 90%);
+                color: hsl(150, 60%, 30%);
+            }
+        }
 
     }
 
@@ -59,8 +66,14 @@ body {
         width: 40px;
         height: 40px;
         color: rgb(85, 83, 83);
+
+        &:hover {
+            background-color: hsl(151, 47%, 90%);
+            color: hsl(150, 60%, 30%);
+        }
     }
 }
+
 
 #light-mode {
     display: none;
@@ -97,25 +110,55 @@ body {
     }
 }
 
+/* MAIN */
+
 main {
     display: flex;
     flex-direction: column;
-}
 
-.card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    h2 {
+        text-align: center;
+        color: hsl(150, 60%, 30%);
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
 }
 
 #works img {
     max-width: 100%;
     height: auto;
 }
+
+#services .card,
+#teams .card {
+    padding: 20px;
+}
+
+#teams .card {
+    .name {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: hsl(150, 60%, 30%);
+        text-align: center;
+        align-content: center;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
 
 /*FOOTER*/
 
